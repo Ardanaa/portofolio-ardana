@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
@@ -24,16 +24,19 @@ const Contact: React.FC = () => {
             <a href="mailto:ardana733@gmail.com" className="text-2xl font-bold text-primary hover:underline">
               ardana733@gmail.com
             </a>
-            <a href="tel:+6285156788613" className="text-lg text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
-              +62 851 5678 8613
-            </a>
           </div>
 
           <div className="flex justify-center gap-8">
-            {[Github, Twitter, Linkedin, Mail].map((Icon, index) => (
+            {[
+              { Icon: Github, href: "https://github.com/ardanaa" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-ardana-1b8472137/" },
+              { Icon: Mail, href: "mailto:ardana733@gmail.com" }
+            ].map(({ Icon, href }, index) => (
               <a 
                 key={index}
-                href="#" 
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-4 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white dark:hover:bg-primary transition-all duration-300"
               >
                 <Icon className="w-6 h-6" />
