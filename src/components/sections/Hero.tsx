@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
+import PixelCharacter from '../ui/PixelCharacter';
+
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen w-full bg-white dark:bg-dark flex flex-col justify-center overflow-hidden pt-20 snap-start">
@@ -21,7 +23,7 @@ const Hero: React.FC = () => {
             </h2>
           </div>
           
-          <h1 className="text-[12vw] leading-[0.85] font-black text-gray-900 dark:text-white tracking-tighter mb-8">
+          <h1 className="text-[12vw] leading-[0.85] font-black text-gray-900 dark:text-white tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
             <motion.span 
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -42,12 +44,28 @@ const Hero: React.FC = () => {
         </motion.div>
       </div>
 
+      {/* Mobile-only Centered Character */}
+      <div className="flex-grow flex items-center justify-center md:hidden z-10 w-full">
+        <PixelCharacter />
+      </div>
+
       <div className="container mx-auto px-8 mt-auto flex justify-between items-end pb-12 relative z-10">
-        <p className="max-w-md text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
+        <p className="max-w-md text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-medium hidden md:block">
           Crafting digital experiences with code and passion.
           <br />
           <span className="text-primary">Based in Indonesia.</span>
         </p>
+        
+        {/* Mobile description placed here or above? Production screenshot shows it at bottom left on desktop. 
+            On mobile production screenshot, it's at the bottom too. 
+            So I will keep it here but maybe adjust visibility/styling if needed. 
+        */}
+        <p className="max-w-md text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-medium md:hidden">
+          Crafting digital experiences with code and passion.
+          <br />
+          <span className="text-primary">Based in Indonesia.</span>
+        </p>
+
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
