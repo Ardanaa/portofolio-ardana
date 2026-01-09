@@ -61,7 +61,7 @@ const PixelCharacter: React.FC = () => {
         <img 
           src="/hero-sprite.png" 
           alt="Pixel Character" 
-          className="w-28 h-28 md:w-32 md:h-32 object-contain pixelated"
+          className="w-50 h-50 object-contain pixelated"
           style={{ imageRendering: 'pixelated' }}
         />
         
