@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   return (
-    <section className="min-h-screen py-20 bg-white dark:bg-dark snap-start flex flex-col justify-center">
+    <section id="about" className="min-h-screen py-20 bg-white dark:bg-dark snap-start flex flex-col justify-center">
       <div className="container mx-auto px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
