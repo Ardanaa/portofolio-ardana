@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
           </div>
           
           <footer className="mt-20 text-gray-500 dark:text-gray-400 text-sm">
-            © {new Date().getFullYear()} Portfolio. All rights reserved.
+            © {new Date().getFullYear()} Ardana. All rights reserved.
           </footer>
         </motion.div>
       </div>
